@@ -15,12 +15,14 @@ import org.springframework.web.context.request.WebRequest;
 public class GlobalExceptionHandler {
 
 	@ExceptionHandler(RecordNotFoundException.class)
-	public final ResponseEntity<List<String>> handleUserNotFoundException(RecordNotFoundException ex, WebRequest request) {
+	public final ResponseEntity<List<String>> handleUserNotFoundException(RecordNotFoundException ex,
+			WebRequest request) {
 		List<String> details = new ArrayList<>();
 		details.add(ex.getLocalizedMessage());
 
-		return new ResponseEntity<List<String>>(details, HttpStatus.NOT_FOUND);
+		return new ResponseEntity<List<String>>(details, HttpStatus.OK);
 	}
+
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<List<String>> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
 		List<String> details = new ArrayList<>();

@@ -36,17 +36,7 @@ public class CustomerService {
 	}
 
 	public Customer update(Customer customer) {
-		Optional<Customer> object = customerRepository.findById(customer.getId());
-		if (object.isPresent()) {
-			Customer cust = object.get();
-			cust.setAddress(customer.getAddress());
-			cust.setLastName(customer.getLastName());
-			Customer cust1 = customerRepository.save(cust);
-			return cust1;
-		} else {
-			return null;
-		}
-
+		return customerRepository.save(customer);
 	}
 
 	public String deleteByEntity(Long ID) {

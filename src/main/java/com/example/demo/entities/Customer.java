@@ -131,5 +131,22 @@ public class Customer {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+	public Customer() {
+		
+	}
+	public Customer(Long id, String firstName, String lastName, String emailAddress, String address, String city,
+			String country, String phoneNumber, Date createdAt, Date updatedAt) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.emailAddress = emailAddress;
+		this.address = address;
+		this.city = city;
+		this.country = country;
+		this.phoneNumber = phoneNumber;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+	}
 
 }
